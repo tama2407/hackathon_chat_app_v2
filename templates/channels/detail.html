@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ channel.name }}{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+  <div class="chat-sidebar">
+    <h2>{{ channel.name }}</h2>
+    <p class="channel-description">{{ channel.description }}</p>
+    <div class="channel-meta">
+      <p>作成者：　{{ channel.user.name }}</p>
+      <p>作成日：　{{ channel.created_at.strftime('%Y-%m-%d') }}</p>
+    </div>
+    <a href="{{ url_for('channels.index') }}" class="btn secondary">部屋の一覧に戻る</a>
+  </div>
+
+  <div class="chat-main">
+    <div class="messages-container">
+      {% if messages %}
+      {% for message in messages %}
+      <div class="message {% if message.user_id == current_user.id %} own-message {% endif %}">
+        <div class="message-header">
+          <span class="message-user">{{ message.user.name }}</span>
+          <span class="message-time">{{ message.created_at.strftime('%Y-%m-%d') }}</span>
+        </div>
+        <div class="message-content">{{ message.content }}</div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p class="no-messages">メッセージがないので、最初のメッセージを送信しましょう！</p>
+      {% endif %}
+    </div>
+
+    <div class="message-form">
+      <form method="POST" action="{{ url_for('messages.create') }}">
+        <input type="hidden" name="channel_id" value="{{ channel.id }}">
+        <div class="form-group">
+          <textarea name="content" placeholder="メッセージを入力" required maxlength="500"></textarea>
+          <button type="submit" class="btn primary">送信</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
