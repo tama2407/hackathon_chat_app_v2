@@ -1,0 +1,37 @@
+:root(
+  /* 色 */
+  --color-primary: #007bff;
+  --color-primary-dark: #0056b3;
+  --color-secondary: #6c757d;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-text-primary: #333333;
+  --color-text-secondary: #6c757d;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+
+  /* 余白や間隔 */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* 文字のサイズ */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+
+  /* 角を丸める */
+  --border-radius-md: 0.375rem;
+
+  /* 枠線の太さ */
+  --border-width: 1px;
+
+  /* 影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* モーダル用 */
+  --z-modal: 1050;
+)
