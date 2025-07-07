@@ -1,4 +1,4 @@
-:root(
+:root{
   /* 色 */
   --color-primary: #007bff;
   --color-primary-dark: #0056b3;
@@ -34,4 +34,4 @@
 
   /* モーダル用 */
   --z-modal: 1050;
-)
+}
