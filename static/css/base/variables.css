@@ -1,14 +1,23 @@
 :root{
-  /* 色 */
-  --color-primary: #007bff;
-  --color-primary-dark: #0056b3;
-  --color-secondary: #6c757d;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-text-primary: #333333;
-  --color-text-secondary: #6c757d;
+  /* 基本の色  */
+  --color-primary: #a9caff;
+  --color-primary-dark: #0051a7;
+  --color-secondary: #787e84;
+  --color-success: #139b33;
+  --color-danger: #b00020;
+  --color-text-primary: #2a2929;
+  --color-text-secondary: #424c56;
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f8f9fa;
+  --color-bg-secondary: #ecf2f8;
+
+  /* このアプリ用  */
+  --color-base: #f9f4e0;
+  --color-black: #000000;
+  --color-dark-green: #4c503d;
+  --color-pale-green:  #567371;
+  --color-azuki: #401b2a;
+  --color-sky:#d6edfa;
+  --color-gray: #d5cfcf;  
 
   /* 余白や間隔 */
   --spacing-xs: 0.25rem;
