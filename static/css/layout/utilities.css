@@ -1,0 +1,17 @@
+/* マージン（外側の余白）のクラス */
+.m-0 { margin: 0 !important; }
+.m-1 { margin: var(--spacing-xs) !important; }
+.m-2 { margin: var(--spacing-sm) !important; }
+
+/* パディング（内側の余白）のクラス */
+.p-0 { padding: 0 !important; }
+.p-1 { padding: var(--spacing-xs) !important; }
+
+/* テキストアライン（文字の配置）のクラス */
+.text-center { text-align: center !important; }
+.text-muted { color: var(--color-text-secondary) !important; }
+
+/* ディスプレイ（要素の並び）のクラス */
+.d-flex { display: flex !important; }
+.justify-center { justify-content: center !important; }
+.align-center { align-items: center !important; }
