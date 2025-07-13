@@ -1,9 +1,9 @@
-:root{
+:root {
   /* 基本の色  */
   --color-primary: #a9caff;
   --color-primary-dark: #0051a7;
   --color-secondary: #787e84;
-  --color-secondary-dark:#5e6266;
+  --color-secondary-dark: #5e6266;
   --color-success: #139b33;
   --color-danger: #b00020;
   --color-danger-dark: #75081c;
@@ -16,10 +16,10 @@
   --color-base: #f9f4e0;
   --color-black: #000000;
   --color-dark-green: #4c503d;
-  --color-pale-green:  #567371;
+  --color-pale-green: #567371;
   --color-azuki: #401b2a;
-  --color-sky:#d6edfa;
-  --color-gray: #b9bcbf;  
+  --color-sky: #d6edfa;
+  --color-gray: #b9bcbf;
 
   /* 余白や間隔 */
   --spacing-xs: 0.25rem;
