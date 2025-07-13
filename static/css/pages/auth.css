@@ -1,0 +1,13 @@
+.auth-container {
+  max-width: 500px;
+  margin: var(--spacing-lg) auto;
+  padding: var(--spacing-lg);
+  background: var(--color-bg-primary);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.auth-container h1 {
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
