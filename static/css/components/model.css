@@ -1,0 +1,21 @@
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: var(--z-modal);
+}
+
+.modal:target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__content {
+  background: var(--color-bg-primary);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  max-width: 600px;
+  width: 90%;
+}
