@@ -1,0 +1,13 @@
+.error-container {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.error-container h1 {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.error-container p {
+  margin-bottom: var(--spacing-lg);
+}
