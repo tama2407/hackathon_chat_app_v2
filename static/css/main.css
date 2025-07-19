@@ -1,1 +1,17 @@
-/* いわゆるCSSリセット */
+@import './base/reset.css';
+@import './base/variables.css';
+@import './base/typography.css';
+
+@import './layout/header.css';
+@import './layout/footer.css';
+@import './layout/utilities.css';
+
+@import './components/buttons.css';
+@import './components/forms.css';
+@import './components/cards.css';
+@import './components/modal.css';
+
+@import './pages/auth.css';
+@import './pages/channels.css';
+@import './pages/chat.css';
+@import './pages/error.css';
