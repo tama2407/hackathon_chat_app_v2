@@ -1,7 +1,7 @@
 
-from flask import Flask
+from flask import Flask, redirect, url_for
 from config import Config
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 from model import User
 from database import init_db, db_session
 
@@ -30,10 +30,24 @@ def create_app():
     from routes.auth import auth_bp
     app.register_blueprint(auth_bp)
 
-    # ルートの定義、簡単な動作確認
+    # 部屋関係のブループリントの登録
+    from routes.channels import channels_bp
+    app.register_blueprint(channels_bp)
+
+    # ルートの定義、アプリ用
     @app.route('/')
     def home():
-        return "Welcome to Hackathon_Chat_App_v2"
+        if current_user.is_authenticated:
+            # ログイン済み → 部屋一覧ページにジャンプ
+            return redirect(url_for('channels.index'))
+        else:
+            # ログインしていない → ログインページにジャンプ
+            return redirect(url_for('auth.login'))
+
+    # # ルートの定義、簡単な動作確認
+    # @app.route('/')
+    # def home():
+    #     return "Welcome to Hackathon_Chat_App_v2"
     
     return app
 

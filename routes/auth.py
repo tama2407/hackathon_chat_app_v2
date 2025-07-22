@@ -57,7 +57,7 @@ def login():
         if user and bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
             login_user(user)
             flash('ログインに成功しました！', 'success')
-            return redirect(url_for('main.index'))   # メイン画面にリダイレクト
+            return redirect(url_for('channels.index'))   # メイン画面にリダイレクト
         else:
             flash('メールアドレスまたはパスワードが間違っています', 'danger')
         
