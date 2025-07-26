@@ -35,6 +35,10 @@ def create_app():
     from routes.channels import channels_bp
     app.register_blueprint(channels_bp)
 
+    # メッセージブループリント
+    from routes.messages import messages_bp
+    app.register_blueprint(messages_bp)
+
     # ルートの定義、アプリ用
     @app.route('/')
     def home():
