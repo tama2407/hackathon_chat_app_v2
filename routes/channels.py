@@ -2,6 +2,7 @@ from flask import (Blueprint, render_template, redirect,url_for, request, flash,
 from flask_login import login_required, current_user
 from database import db_session
 from model import Channel, Message
+from sqlalchemy.exc import SQLAlchemyError
 
 # 部屋関係のブループリントを作成（channels_bpという名前で、/channelsから始まるURLを管理する）
 channels_bp = Blueprint('channels', __name__, url_prefix='/channels')
@@ -55,7 +56,9 @@ def create():
 @channels_bp.route('/delete/<int:channel_id>', methods=['POST'])
 @login_required
 def delete(channel_id):
-    channel = db_session.query(Channel).get_or_404(channel_id)
+    channel = db_session.get(Channel, channel_id)
+    if channel is None:
+        abort(404)
 
     # 作成者以外は削除できないようにする
     if channel.user_id != current_user.id:
