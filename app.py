@@ -3,7 +3,8 @@ from flask import Flask, redirect, url_for
 from config import Config
 from flask_login import LoginManager, current_user
 from model import User
-from database import init_db, db_session
+import database
+from database import init_db
 
 def create_app():
     # Flaskアプリケーションのインスタンス化
@@ -24,7 +25,7 @@ def create_app():
     # ユーザーローダーの設定
     @login_manager.user_loader
     def load_user(user_id):
-        return db_session.query(User).get(int(user_id))
+        return database.db_session.query(User).get(int(user_id))
 
     # 認証ブループリントの登録
     from routes.auth import auth_bp
