@@ -1,6 +1,5 @@
 from flask import (Blueprint, render_template, redirect,url_for, request, flash, abort)
 from flask_login import login_required, current_user
-from sqlalchemy.exc import SQLAlchemyError
 from database import db_session
 from model import Channel, Message
 
@@ -18,7 +17,10 @@ def index():
 @channels_bp.route('/<int:channel_id>', methods=['GET'])
 @login_required
 def view(channel_id):
-    channel = db_session.query(Channel).get_or_404(channel_id)
+    channel = db_session.get(Channel, channel_id)
+    if channel is None:
+        abort(404)
+
     messages = (db_session.query(Message).filter_by(channel_id=channel_id).order_by(Message.created_at.asc()).all())
     return render_template('channels/detail.html',channel=channel,messages=messages)
 
