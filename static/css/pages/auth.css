@@ -1,4 +1,14 @@
+.auth-wrapper {
+  background-color: var(--base);
+  width: 100vw;
+}
+
 .auth-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.auth-form {
   max-width: 500px;
   margin: var(--spacing-lg) auto;
   padding: var(--spacing-lg);
@@ -8,6 +18,19 @@
 }
 
 .auth-container h1 {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  font-size: 36px;
+}
+
+.auth-container h2 {
   margin-bottom: var(--spacing-md);
   text-align: center;
+  font-size: 24px;
+}
+
+.auth-container p {
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  font-size: 16px;
 }
