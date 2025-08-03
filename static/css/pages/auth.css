@@ -8,13 +8,19 @@
   flex-direction: row-reverse;
 }
 
+.auth-main-pic {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 32vw;
+  height: 100vh;
+}
+
 .auth-form {
   max-width: 500px;
   margin: var(--spacing-lg) auto;
   padding: var(--spacing-lg);
   background: var(--color-bg-primary);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-md);
 }
 
 .auth-container h1 {
