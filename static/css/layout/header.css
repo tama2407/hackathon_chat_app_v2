@@ -1,25 +1,24 @@
 .header {
+  max-width: 100%;
+  height: 160px;
   background-color: var(--color-base);
-  color: var(--color-text-primary);
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-md);
   position: sticky;
   top: 0;
   z-index: var(--z-modal);
 }
 
 .header__container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
 }
 
 .header__logo {
-  font-size: var(--font-size-xl);
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--color-text-primary);
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--border-radius-md);
 }
 
 .header__nav-links a {

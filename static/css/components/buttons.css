@@ -60,5 +60,6 @@
 
 .azuki-btn:hover {
   background-color: var(--color-brawn);
+  color: var(--color-dark-red);
   transition: background-color 0.2s, transform 0.2s;
 }

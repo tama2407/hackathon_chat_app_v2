@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block nav_btns %}
-<a href="{{ url_for('channels.index') }}" class="azuki-btn">部屋を作る</a>
-<a href="{{ url_for('auth.login') }}" class="azuki-btn">ログインする</a>
+<div class="header__container">
+  <a href="{{ url_for('channels.index') }}" class="azuki-btn">部屋を作る</a>
+  <a href="{{ url_for('auth.login') }}" class="azuki-btn">ログインする</a>
+</div>
 {% endblock %}
 
 {% block title %}部屋の一覧{% endblock %}
