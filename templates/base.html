@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %} チャットアプリ {% endblock %}</title>
+  <title>{% block title %} １習慣 {% endblock %}</title>
   <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
@@ -12,13 +12,15 @@
 <body>
   <header>
     <nav>
-      <a href="{{ url_for('home') }}" class="logo">チャットアプリ</a>
+      <a href="{{ url_for('home') }}" class="logo">チャットアプリ「１習慣」</a>
       <div class="nav-links">
         {% if current_user.is_authenticated %}
         <a href="{{ url_for('auth.logout') }}">ログアウト</a>
         {% else %}
-        <a href="{{ url_for('auth.login') }}">ログイン</a>
-        <a href="{{ url_for('auth.signup') }}">新規登録</a>
+        <ol>
+        <li><a href="{{ url_for('auth.login') }}">ログイン</a></li>
+        <li><a href="{{ url_for('auth.signup') }}">新規登録</a></li>
+        </ol>
         {% endif %}
       </div>
     </nav>

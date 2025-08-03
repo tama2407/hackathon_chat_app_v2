@@ -1,13 +1,16 @@
 .btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-dark-green);
   padding: var(--spacing-sm) var(--spacing-md);
-  font-size: var(--font-size-base);
-  border-radius: var(--border-radius-md);
+  width: 200px;
+  margin: 0 auto;
+  border: none;
+  border-radius: var(--border-radius-btn);
+  box-shadow: var(--shadow-md);
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
-  text-decoration: none;
 }
 
 .btn--primary {
