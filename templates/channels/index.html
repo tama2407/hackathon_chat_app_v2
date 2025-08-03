@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 
+{% block nav_btns %}
+<a href="{{ url_for('channels.index') }}" class="azuki-btn">部屋を作る</a>
+<a href="{{ url_for('auth.login') }}" class="azuki-btn">ログインする</a>
+{% endblock %}
+
 {% block title %}部屋の一覧{% endblock %}
 
 {% block content %}
 <div class="channels-container">
   <div class="channel-header">
-    <h1>部屋の一覧</h1>
+    <h1>習慣部屋の一覧</h1>
     <a href="#create-modal" class="btn primary">新しい部屋を作成</a>
   </div>
   <div class="channel-list">
