@@ -1,3 +1,4 @@
+/* ボタン１（深緑色） */
 .btn {
   display: flex;
   align-items: center;
@@ -39,4 +40,24 @@
 
 .btn--danger:hover {
   background-color: var(--color-danger-dark);
+}
+
+/* ボタン２（あずき色） */
+.azuki-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-dark-read);
+  padding: var(--spacing-sm) var(--spacing-md);
+  width: 200px;
+  border: none;
+  border-radius: var(--border-radius-btn);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.azuki-btn:hover {
+  background-color: var(--color-brawn);
+  transition: background-color 0.2s, transform 0.2s;
 }

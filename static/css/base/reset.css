@@ -32,6 +32,7 @@ button,
 textarea,
 select {
   font: inherit;
+  font-size: 110%;
 }
 
 button {
