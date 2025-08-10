@@ -8,6 +8,11 @@
   flex-direction: row-reverse;
 }
 
+.auth-form-wrapper {
+  width: 64vw;
+  height: 100vh;
+}
+
 .auth-main-pic {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -16,12 +21,13 @@
   height: 100vh;
 }
 
-.auth-form {
-  max-width: 500%;
+.auth-form-container {
+  max-width: 500;
   line-height: 2.0;
   margin: var(--spacing-lg) auto;
   padding: var(--spacing-lg);
   background: var(--color-bg-primary);
+  text-align: center;
 }
 
 .auth-container h1 {
