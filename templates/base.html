@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %} １習慣 {% endblock %}</title>
+  <title>{{ pagetitle }}</title>
   <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 
-<body>
+<body class="page-wrapper">
   <header class="header">
     <img src="../static/img/oneweek-logo.png" alt="logo" class="header__logo">
     <h1 class="header__title">{{ pagetitle }}</h1>

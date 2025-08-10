@@ -17,7 +17,8 @@
 }
 
 .auth-form {
-  max-width: 500px;
+  max-width: 500%;
+  line-height: 2.0;
   margin: var(--spacing-lg) auto;
   padding: var(--spacing-lg);
   background: var(--color-bg-primary);
@@ -27,6 +28,7 @@
   margin-bottom: var(--spacing-lg);
   text-align: center;
   font-size: 36px;
+  line-height: 4.0;
 }
 
 .auth-container h2 {
