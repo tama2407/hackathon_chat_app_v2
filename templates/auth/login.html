@@ -11,6 +11,7 @@
       <h1>１習慣</h1>
       <h2>仲間とつながって習慣をそだてる</h2>
       <h2>気になる部屋に遊びに行こう！</h2>
+
       <div class="auth-form-container">
         <form method="POST" action="{{ url_for('auth.login') }}" class="form-group">
           <div class="form-label">
@@ -22,13 +23,17 @@
             <input type="password" id="password" name="password" required minlength="8"
               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}" title="大文字・小文字・数字を含む8文字以上のパスワードを入力してください">
           </div>
+          <button type="submit" class="btn-primary">ログイン</button>
+        </form>
       </div>
-      <button type="submit" class="btn-primary">ログイン</button>
-      </form>
-      <div class="auth-form-container"></div>
-      <p class="auth-link">アカウントをお持ちでない方は<a href="{{ url_for('auth.signup') }}">新規登録</a>してください</p>
+
+      <div class="auth-form-container">
+        <p>アカウントをお持ちでない方は新しく登録してください</p>
+        <form method="GET" action="{{ url_for('auth.signup') }}" class="form-group">
+          <button type="submit" class="btn-primary">新規登録</button>
+        </form>
+      </div>
     </div>
   </div>
-  <div>
-  </div>
-  {% endblock %}
+</div>
+{% endblock %}

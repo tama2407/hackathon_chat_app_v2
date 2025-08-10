@@ -23,7 +23,7 @@
 
 .auth-form-container {
   max-width: 500;
-  line-height: 2.0;
+  line-height: 32px;
   margin: var(--spacing-lg) auto;
   padding: var(--spacing-lg);
   background: var(--color-bg-primary);
@@ -33,12 +33,12 @@
 .auth-container h1 {
   margin-bottom: var(--spacing-lg);
   text-align: center;
-  font-size: 36px;
+  font-size: 40px;
   line-height: 4.0;
 }
 
 .auth-container h2 {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   text-align: center;
   font-size: 24px;
 }

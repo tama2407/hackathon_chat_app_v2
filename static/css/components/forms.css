@@ -6,11 +6,13 @@
   display: block;
   margin-bottom: var(--spacing-md);
   font-weight: 500;
+  line-height: 32px;
 }
 
 .form-input,
 .form-textarea {
   width: 100%;
+  line-height: 32px;
   padding: var(--spacing-sm);
   border: var(--border-width) solid var(--color-gray);
   border-radius: var(--border-radius-md);
@@ -25,5 +27,6 @@
 
 .form-textarea {
   resize: vertical;
+  line-height: 32px;
   min-height: 80px;
 }
