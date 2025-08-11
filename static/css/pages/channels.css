@@ -40,9 +40,10 @@
   height: 24vh;
   margin: var(--spacing-md) var(--spacing-md);
   border-color: var(--color-gray);
-  border-style: solid;
+  /* border-style: solid;
   border-width: 1.6px;
-  border-radius: 12px;
+  border-radius: 12px; */
+  object-fit: contain;
 }
 
 .channels-container {

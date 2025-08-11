@@ -9,31 +9,31 @@
 
 {% block content %}
 <div class="add-channel-wrapper">
-  <div class="add-channel-form-wrapper">
-    <img src="{{ url_for('static',filename='img/add-channel.png') }}" alt="" class="add-channel-img"></img>
+  <div class="add-channel-container">
     <div class="add-channel-form-container">
       <h1>新しい習慣部屋を作成します</h1>
       <h2>仲間と一緒に習慣を続けよう！</h2>
       <p>作成後は「部屋の名前」と「部屋の説明文」を変更することはできません。</p>
+      <form method="POST" action="{{ url_for('channels.create') }}" class="form-group">
+        <!-- 部屋の名前 -->
+        <div class="form-label">
+          <label for="name">習慣部屋の名前　　</label>
+          <input type="text" id="name" name="name" required maxlength="30" value="{{ request.form.get('name', '') }}">
+          <small class="form-help-text">30文字以内で入力してください</small>
+        </div>
+        <!-- 部屋の説明 -->
+        <div class="form-label">
+          <label for="description">習慣部屋の説明　　</label>
+          <input type="text" id="description" name="description" required maxlength="200"
+            value="{{ request.form.get('description', '') }}">
+          <small class="form-help-text">200文字以内で入力してください</small>
+        </div>
+        <button type=" submit" class="btn-primary">部屋を作成</button>
+      </form>
     </div>
-    <form method="POST" action="{{ url_for('channels.create') }}" class="form-group">
-      <!-- 部屋の名前 -->
-      <div class="form-label">
-        <label for="name">習慣部屋の名前</label>
-        <input type="text" id="name" name="name" required maxlength="30"
-          value="{{ request.form.get('name', '') }}">
-        <small class="form-help-text">30文字以内で入力してください</small>
-      </div>
-      <!-- 部屋の説明 -->
-      <div class="form-label">
-        <label for="description">習慣部屋の説明</label>
-        <input type="text" id="description" name="description" required maxlength="200"
-          placeholder="この部屋でどんな習慣を続けるのか説明をお願いします（任意）" value="{{ request.form.get('description', '') }}">
-        <small class="form-help-text">200文字以内で入力してください</small>
-      </div>
-      <button type=" submit" class="btn-primary">部屋を作成</button>
-    </form>
-    </div>
+  </div>
+  <div class="add-channel-img-wrapper">
+    <img src="{{ url_for('static',filename='img/add-channel.png') }}" alt="部屋作成のイメージ" class="add-channel-img">
   </div>
 </div>
 {% endblock %}
