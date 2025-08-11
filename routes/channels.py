@@ -26,31 +26,31 @@ def view(channel_id):
     return render_template('channels/detail.html',channel=channel,messages=messages)
 
 # 新しい部屋の作成
-@channels_bp.route('/add_channel', methods=['POST'])
+@channels_bp.route('/create', methods=['GET', 'POST'])
 @login_required
-def add_channel():
+def create():
     name = request.form.get('name', '').strip()
     description = request.form.get('description', '').strip()
 
     if not name or not description:
         flash('チャンネル名と説明は必須です。', 'danger')
-        return redirect(url_for('channels.index'))
+        return redirect(url_for('channels.create'))
     
     if db_session.query(Channel).filter_by(name=name).first():
         flash('同じ名前のチャンネルがすでに存在します。', 'danger')
-        return redirect(url_for('channels.index'))
+        return redirect(url_for('channels.create'))
 
     try:
         new_channel = Channel(name=name,description=description,user_id=current_user.id)
         db_session.add(new_channel)
         db_session.commit()
         flash('チャンネルを作成しました！', 'success')
+        return redirect(url_for('channels.index'))
 
     except SQLAlchemyError:
         db_session.rollback()
         flash('チャンネルの作成に失敗しました。', 'danger')
-
-    return redirect(url_for('channels.index'))
+        return redirect(url_for('channels.create'))
 
 # 部屋の削除
 @channels_bp.route('/delete/<int:channel_id>', methods=['POST'])

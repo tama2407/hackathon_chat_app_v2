@@ -2,7 +2,7 @@
 
 {% block nav_btns %}
 <a href="{{ url_for('channels.index') }}" class="azuki-btn">部屋一覧に戻る</a>
-<a href="{{ url_for('auth.login') }}" class="azuki-btn">ログアウトする</a>
+<a href="{{ url_for('auth.logout') }}" class="azuki-btn">ログアウトする</a>
 {% endblock %}
 
 {% block title %} add-channel {% endblock %}
@@ -16,7 +16,7 @@
       <h2>仲間と一緒に習慣を続けよう！</h2>
       <p>作成後は「部屋の名前」と「部屋の説明文」を変更することはできません。</p>
     </div>
-    <form method="POST" action="{{ url_for('channels.add_channel') }}" class="form-group">
+    <form method="POST" action="{{ url_for('channels.create') }}" class="form-group">
       <div class="form-label">
         <label for="channel-name">習慣部屋の名前</label>
         <input type="text" id="channel_name" name="channel_name" required maxlength="30"
