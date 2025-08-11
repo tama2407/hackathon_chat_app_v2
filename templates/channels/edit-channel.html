@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 
 {% block nav_btns %}
-<a href="{{ url_for('auth.login') }}" class="azuki-btn">部屋一覧に戻る</a>
+<a href="{{ url_for('index') }}" class="azuki-btn">部屋一覧に戻る</a>
 <a href="{{ url_for('auth.login') }}" class="azuki-btn">ログアウトする</a>
 {% endblock %}
 
-{% block title %} channels {% endblock %}
+{% block title %} edit-channel {% endblock %}
 
 {% block content %}
+<div class="edit-channel-wrapper">
+    <div class="edit-channel-container">
+
+
       <div id="create-modal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
