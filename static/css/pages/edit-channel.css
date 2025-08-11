@@ -3,7 +3,7 @@
   width: 100vw;
 }
 
-.add-channel-container {
+.add-channel-form-wrapper {
   display: flex;
   flex-direction: row-reverse;
 }
@@ -16,4 +16,33 @@
 .add-channel-img {
   width: 360px;
   height: 560px;
+}
+
+.add-channel-form-container h1 {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  font-size: 40px;
+  line-height: 4.0;
+}
+
+.add-channel-form-container h2 {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  font-size: 24px;
+}
+
+.add-channel-form-container p {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  font-size: 16px;
+}
+
+
+.add-channel-form-container {
+  max-width: 500;
+  line-height: 32px;
+  margin: var(--spacing-lg) auto;
+  padding: var(--spacing-lg);
+  background: var(--color-bg-primary);
+  text-align: center;
 }

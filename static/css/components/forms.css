@@ -19,6 +19,13 @@
   transition: border-color 0.2s;
 }
 
+.form-help-text {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
 .form-input:focus,
 .form-textarea:focus {
   border-color: var(--color-primary);
