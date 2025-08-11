@@ -1,4 +1,19 @@
-.edit-channel-wrapper {
-  background-color: var(--base);
+.add-channel-wrapper {
+  background-color: var(--color-bg-primary);
   width: 100vw;
+}
+
+.add-channel-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.add-channel-form-wrapper {
+  width: 64vw;
+  height: 100vh;
+}
+
+.add-channel-img {
+  width: 360px;
+  height: 560px;
 }
