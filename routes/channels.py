@@ -26,9 +26,9 @@ def view(channel_id):
     return render_template('channels/detail.html',channel=channel,messages=messages)
 
 # 新しい部屋の作成
-@channels_bp.route('/create', methods=['POST'])
+@channels_bp.route('/add_channel', methods=['POST'])
 @login_required
-def create():
+def add_channel():
     name = request.form.get('name', '').strip()
     description = request.form.get('description', '').strip()
 
