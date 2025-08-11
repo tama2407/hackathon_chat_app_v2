@@ -2,7 +2,7 @@
 
 {% block nav_btns %}
 <a href="{{ url_for('channels.index') }}" class="azuki-btn">部屋一覧に戻る</a>
-<a href="{{ url_for('auth.logout') }}" class="azuki-btn">ログアウトする</a>
+<a href="{{ url_for('auth.login') }}" class="azuki-btn">ログアウトする</a>
 {% endblock %}
 
 {% block title %} add-channel {% endblock %}
@@ -17,17 +17,18 @@
       <p>作成後は「部屋の名前」と「部屋の説明文」を変更することはできません。</p>
     </div>
     <form method="POST" action="{{ url_for('channels.create') }}" class="form-group">
+      <!-- 部屋の名前 -->
       <div class="form-label">
-        <label for="channel-name">習慣部屋の名前</label>
-        <input type="text" id="channel_name" name="channel_name" required maxlength="30"
-          value="{{ request.form.channel_name if request.form.channel_name else '' }}">
+        <label for="name">習慣部屋の名前</label>
+        <input type="text" id="name" name="name" required maxlength="30"
+          value="{{ request.form.get('name', '') }}">
         <small class="form-help-text">30文字以内で入力してください</small>
       </div>
+      <!-- 部屋の説明 -->
       <div class="form-label">
         <label for="description">習慣部屋の説明</label>
-        <textarea id="description" name="description" required maxlength="200"
-          placeholder="この部屋でどんな習慣を続けるのか説明をお願いします（任意）"
-          value="{{ request.form.description if request.form.description else '' }">
+        <input type="text" id="description" name="description" required maxlength="200"
+          placeholder="この部屋でどんな習慣を続けるのか説明をお願いします（任意）" value="{{ request.form.get('description', '') }}">
         <small class="form-help-text">200文字以内で入力してください</small>
       </div>
       <button type=" submit" class="btn-primary">部屋を作成</button>

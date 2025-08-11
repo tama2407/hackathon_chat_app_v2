@@ -29,8 +29,9 @@ def view(channel_id):
 @channels_bp.route('/create', methods=['GET', 'POST'])
 @login_required
 def create():
-    name = request.form.get('name', '').strip()
-    description = request.form.get('description', '').strip()
+    if request.method == 'POST':
+        name = request.form.get('name', '').strip()
+        description = request.form.get('description', '').strip()
 
     if not name or not description:
         flash('チャンネル名と説明は必須です。', 'danger')
@@ -41,7 +42,7 @@ def create():
         return redirect(url_for('channels.create'))
 
     try:
-        new_channel = Channel(name=name,description=description,user_id=current_user.id)
+        new_channel = Channel(name=name, description=description, user_id=current_user.id)
         db_session.add(new_channel)
         db_session.commit()
         flash('チャンネルを作成しました！', 'success')
