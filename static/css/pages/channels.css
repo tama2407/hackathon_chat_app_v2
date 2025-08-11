@@ -1,16 +1,109 @@
-.channels-header {
+.channels-background {
+  height: auto;
+  background-image: url(/static/img/home.png);
+  background-size: 32vw 60vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right bottom;
+}
+
+.channels-background-touka {
+  height: auto;
+  background-color: rgba(255, 253, 246, 0.7);
+  background-position: right bottom;
+}
+
+.home-container {
+  width: 92vw;
+  height: 80vh;
+  margin: var(--spacing-md) var(--spacing-md);
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.stamp-container {
+  width: 28vw;
+  height: auto;
+  display: block;
+  justify-content: center;
+}
+
+.stamp-title {
+  margin: var(--spacing-md) var(--spacing-md);
+  text-align: center;
+}
+
+.stamp-img {
+  width: 28vw;
+  height: 24vh;
+  margin: var(--spacing-md) var(--spacing-md);
+  border-color: var(--color-gray);
+  border-style: solid;
+  border-width: 1.6px;
+  border-radius: 12px;
+}
+
+.channels-container {
+  width: 92%;
+  height: auto;
+  margin: var(--spacing-sm) var(--spacing-md);
+}
+
+.channels-title {
+  margin: var(--spacing-md) var(--spacing-md);
+  text-align: center;
 }
 
 .channels-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  width: 92%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+  background-color: rgba(255, 253, 246, 0.7);
+  border-style: solid;
+  border-width: 1.6px;
+  border-radius: var(--border-radius-md);
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.channels-card {
+  width: 96%;
+  min-height: 4.5rem; 
+  display: flex;
+  padding: var(--spacing-sm) var(--spacing-sm);
+  justify-content: space-between;
+  background-color: rgba(255, 253, 246, 0.7);
+  border-style: solid;
+  border-width: 1.2px;
+  border-radius: var(--border-radius-md);
+  align-items: center;
   gap: var(--spacing-lg);
 }
 
-.channel-actions {
-  margin-top: var(--spacing-sm);
+.card-content p {
+  margin: 0;
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+}
+
+.metadata {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+}
+
+.metadata span {
+  display: block;
+}
+
+.channels-container p {
+  text-align: center;
+  font-size: var(--font-size-lg);
 }
