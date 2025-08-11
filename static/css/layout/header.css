@@ -1,8 +1,11 @@
-.header {
+.header-wrapper {
   max-width: 100%;
-  height: 160px;
-  background-color: var(--color-base);
-  padding: var(--spacing-md) var(--spacing-md);
+  height: 112px;
+  background-color: var(--color-dark-green);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: var(--z-modal);
@@ -10,15 +13,21 @@
 
 .header__container {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   gap: 24px;
 }
 
 .header__logo {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   border-radius: var(--border-radius-md);
+}
+
+.header__title{
+  display: inline-block;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
 }
 
 .header__nav-links a {
