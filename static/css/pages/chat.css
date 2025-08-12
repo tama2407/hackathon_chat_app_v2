@@ -1,7 +1,6 @@
 .chat-container {
   display: flex;
-  /* ヘッダー：112px　　フッター：68px */
-  height: calc(100vh - 180px);
+  height: calc(100vh - 200px);
   background: var(--color-bg-primary);
   border-radius: var(--border-radius-md);
 }
@@ -21,7 +20,6 @@
   line-height: 12px;
   margin-bottom: var(--spacing-xl);
 }
-
 
 .chat-main {
   flex: 1;

@@ -1,5 +1,5 @@
 
-from flask import Flask, redirect, url_for
+from flask import Flask,render_template, redirect, url_for
 from config import Config
 from flask_login import LoginManager, current_user
 from model import User
@@ -54,6 +54,16 @@ def create_app():
     # def home():
     #     return "Welcome to Hackathon_Chat_App_v2"
     
+    # 404エラー
+    @app.errorhandler(404)
+    def show_error404(error):
+        return render_template('error/404.html'), 404
+    
+    # 500エラー
+    @app.errorhandler(500)
+    def show_error500(error):
+        return render_template('error/500.html'), 500
+
     return app
 
 if __name__ == '__main__':

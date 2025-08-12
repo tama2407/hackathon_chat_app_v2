@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block nav_btns %}
+<a href="{{ url_for('channels.index') }}" class="azuki-btn">部屋一覧に戻る</a>
+<a href="{{ url_for('auth.login') }}" class="azuki-btn">ログアウトする</a>
+{% endblock %}
+
+{% block title %}404error{% endblock %}
+
+{% block content %}
+<div class="error-wrapper">
+    <div class="error-main-container">
+        <div class="error-column-left">
+            <div class="error-title">
+                <p class="error-title-size">404エラー</p>
+            </div>
+            <div class="error-message-404">
+                <p class="error-message-size">
+                    ページが見つかりません。
+                </p>
+            </div>
+        </div>
+        <img src="{{ url_for('static',filename='img/error.png')}}" class="error-pic">
+    </div>
+</div>
+{% endblock %}
