@@ -28,15 +28,18 @@
           {% if channels %}
           {% for channel in channels %}
           <div class="channels-card">
-            <h2>{{ channel.name }}</h2>
-            <p>{{ channel.description }}</p>
+            <div class="channels-card-list">
+              <h2>{{ channel.name }}</h2>
+              <p>{{ channel.description }}</p>
+              <div class="metadata">
+                <span>作成者： {{ channel.user.name }}</span>
+                <span>作成日： {{ channel.created_at.strftime('%Y-%m-%d') }}</span>
+              </div>
+            </div>
+            <div class="channel-btn">
+              <a href="{{ url_for('channels.view', channel_id=channel.id) }}" class="btn-primary">参加する</a>
+            </div>
           </div>
-          <div class="metadata">
-            <span>作成者： {{ channel.user.name }}</span>
-            <span>作成日： {{ channel.created_at.strftime('%Y-%m-%d') }}</span>
-          </div>
-          <a href="{{ url_for('channels.view', channel_id=channel.id) }}" class="btn-primary">参加する</a>
-
           {% endfor %}
           {% else %}
           <p class="no-channels">部屋がないので、新しい部屋を作成してください</p>
