@@ -16,20 +16,25 @@
       <p>作成後は「部屋の名前」と「部屋の説明文」を変更することはできません。</p>
       <form method="POST" action="{{ url_for('channels.create') }}" class="form-group">
         <!-- 部屋の名前 -->
-        <div class="form-label">
-          <p><label for="name">習慣部屋の名前　　</label></p>
-          <p><input type="text" id="name" name="name" required maxlength="30" value="{{ request.form.get('name', '') }}"></p>
-          <small class="form-help-text">30文字以内で入力してください</small></p>
+        <label class="form-label" for="name">習慣部屋の名前　　</label>
+        <input class="form-input" type="text" id="name" name="name" required maxlength="30"
+          value="{{ request.form.get('name', '') }}">
+        <div class="form-help-text">
+          <small>30文字以内で入力してください</small>
         </div>
+
         <!-- 部屋の説明 -->
-        <div class="form-label">
-          <p><label for="description">習慣部屋の説明　　</label></p>
-          <p><textarea type="text" id="description" name="description" required maxlength="200"
-            value="{{ request.form.get('description', '') }}"></textarea></p>
-          <small class="form-help-text">200文字以内で入力してください</small>
+        <label class="form-label" for="description">習慣部屋の説明　　</label>
+        <textarea class="form-textarea" id="description" name="description" required maxlength="200"
+          value="{{ request.form.get('description', '') }}"></textarea>
+        <div class="form-help-text">
+          <small>200文字以内で入力してください</small>
         </div>
+        <div class="add-channel-text">
         <button type=" submit" class="btn-primary">部屋を作成</button>
+      </div>
       </form>
+      
     </div>
   </div>
   <div class="add-channel-img-wrapper">

@@ -9,7 +9,6 @@
 
 .add-channel-container {
   flex: 1;
-  max-width: 600px;
 }
 
 .add-channel-form-container {
@@ -36,9 +35,13 @@
   font-size: 16px;
 }
 
+.add-channel-text{
+  margin: 40px;
+}
+
 .add-channel-img-wrapper {
-  width: 320px;
-  height: 520px;
+  width: 40%;
+  height: 100%;
   flex-shrink: 0;
   display: flex;
   align-items: center;
