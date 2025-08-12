@@ -17,15 +17,15 @@
       <form method="POST" action="{{ url_for('channels.create') }}" class="form-group">
         <!-- 部屋の名前 -->
         <div class="form-label">
-          <label for="name">習慣部屋の名前　　</label>
-          <input type="text" id="name" name="name" required maxlength="30" value="{{ request.form.get('name', '') }}">
-          <small class="form-help-text">30文字以内で入力してください</small>
+          <p><label for="name">習慣部屋の名前　　</label></p>
+          <p><input type="text" id="name" name="name" required maxlength="30" value="{{ request.form.get('name', '') }}"></p>
+          <small class="form-help-text">30文字以内で入力してください</small></p>
         </div>
         <!-- 部屋の説明 -->
         <div class="form-label">
-          <label for="description">習慣部屋の説明　　</label>
-          <input type="text" id="description" name="description" required maxlength="200"
-            value="{{ request.form.get('description', '') }}">
+          <p><label for="description">習慣部屋の説明　　</label></p>
+          <p><textarea type="text" id="description" name="description" required maxlength="200"
+            value="{{ request.form.get('description', '') }}"></textarea></p>
           <small class="form-help-text">200文字以内で入力してください</small>
         </div>
         <button type=" submit" class="btn-primary">部屋を作成</button>

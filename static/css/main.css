@@ -13,5 +13,6 @@
 
 @import './pages/auth.css';
 @import './pages/channels.css';
+@import './pages/create.css';
 @import './pages/chat.css';
 @import './pages/error.css';

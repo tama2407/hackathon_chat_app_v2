@@ -9,7 +9,7 @@
 }
 
 .auth-form-wrapper {
-  width: 64vw;
+  width: 80vw;
   height: 100vh;
 }
 
@@ -17,12 +17,12 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  width: 32vw;
+  width: 40vw;
   height: 100vh;
 }
 
 .auth-form-container {
-  max-width: 500;
+  max-width: 600;
   line-height: 32px;
   margin: var(--spacing-lg) auto;
   padding: var(--spacing-lg);

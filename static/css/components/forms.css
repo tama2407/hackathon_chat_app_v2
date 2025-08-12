@@ -11,9 +11,8 @@
 
 .form-input,
 .form-textarea {
-  width: 100%;
   line-height: 32px;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
   border: var(--border-width) solid var(--color-gray);
   border-radius: var(--border-radius-md);
   transition: border-color 0.2s;
@@ -23,17 +22,6 @@
   font-size: 0.9rem;
   color: var(--color-gray);
   margin-top: 0.25rem;
+  align-items: center;
   font-style: italic;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-  border-color: var(--color-primary);
-  outline: none;
-}
-
-.form-textarea {
-  resize: vertical;
-  line-height: 32px;
-  min-height: 80px;
 }
