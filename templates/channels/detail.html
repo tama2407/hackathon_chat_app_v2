@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block nav_btns %}
+<a href="{{ url_for('channels.index') }}" class="azuki-btn">部屋一覧に戻る</a>
+<a href="{{ url_for('auth.login') }}" class="azuki-btn">ログアウトする</a>
+{% endblock %}
+
 {% block title %}{{ channel.name }}{% endblock %}
 
 {% block content %}
@@ -11,7 +16,6 @@
       <p>作成者：　{{ channel.user.name }}</p>
       <p>作成日：　{{ channel.created_at.strftime('%Y-%m-%d') }}</p>
     </div>
-    <a href="{{ url_for('channels.index') }}" class="btn secondary">部屋の一覧に戻る</a>
   </div>
 
   <div class="chat-main">
@@ -27,7 +31,7 @@
       </div>
       {% endfor %}
       {% else %}
-      <p class="no-messages">メッセージがないので、最初のメッセージを送信しましょう！</p>
+      <p class="no-messages">メッセージがないので、最初のメッセージを送信しよう！</p>
       {% endif %}
     </div>
 
@@ -35,7 +39,7 @@
       <form method="POST" action="{{ url_for('messages.create') }}">
         <input type="hidden" name="channel_id" value="{{ channel.id }}">
         <div class="form-group">
-          <textarea name="content" placeholder="メッセージを入力" required maxlength="500"></textarea>
+          <textarea class="form-textarea" name="content" placeholder="メッセージを入力" required maxlength="500"></textarea>
           <button type="submit" class="btn-primary">送信</button>
         </div>
       </form>
