@@ -1,7 +1,9 @@
 footer {
+  height: 68px;
   background-color: var(--color-brawn);
   color: var(--color-text-secondary);
   text-align: center;
+  align-items: center;
   padding: var(--spacing-md);
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
 }

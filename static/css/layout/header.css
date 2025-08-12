@@ -1,5 +1,5 @@
 .header-wrapper {
-  max-width: 100%;
+  width: 100%;
   height: 112px;
   background-color: var(--color-dark-green);
   padding: var(--spacing-sm) var(--spacing-md);
