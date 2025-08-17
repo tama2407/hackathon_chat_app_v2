@@ -7,39 +7,29 @@
   gap: var(--spacing-md);
 }
 
-.add-channel-container {
+.error-main-container {
   flex: 1;
 }
 
-.add-channel-form-container {
+.error-column-left {
   display: block;
   margin: var(--spacing-lg) var(--spacing-lg);
 }
 
-.add-channel-form-container h1 {
+.error-title {
   margin-bottom: var(--spacing-lg);
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   line-height: 1.2;
 }
 
-.add-channel-form-container h2 {
-  margin-bottom: var(--spacing-lg);
-  text-align: center;
-  font-size: 24px;
-}
-
-.add-channel-form-container p {
-  margin-bottom: var(--spacing-lg);
-  text-align: center;
-  font-size: 16px;
-}
-
-.add-channel-text {
+.error-message {
   margin: 40px;
+  text-align: center;
+    font-size: 32px;
 }
 
-.add-channel-img-wrapper {
+.error-img-wrapper {
   width: 40%;
   height: 100%;
   flex-shrink: 0;
@@ -49,7 +39,7 @@
   margin: var(--spacing-lg) var(--spacing-lg);
 }
 
-.add-channel-img {
+.error-img {
   width: 100%;
   height: auto;
   display: block;

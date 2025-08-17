@@ -32,7 +32,7 @@
   /* 文字のサイズ */
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
+  --font-size-xl : 1.25rem;
 
   /* 角を丸める */
   --border-radius-btn: 30px;

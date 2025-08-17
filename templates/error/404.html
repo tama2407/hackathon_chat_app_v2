@@ -12,15 +12,17 @@
     <div class="error-main-container">
         <div class="error-column-left">
             <div class="error-title">
-                <p class="error-title-size">404エラー</p>
+                <p> 404エラー</p>
             </div>
-            <div class="error-message-404">
-                <p class="error-message-size">
-                    ページが見つかりません。
+            <div class="error-message">
+                <p>
+                    ページが見つかりません...。
                 </p>
             </div>
         </div>
-        <img src="{{ url_for('static',filename='img/error.png')}}" class="error-pic">
+    </div>
+    <div class="error-img-wrapper">
+        <img src="{{ url_for('static',filename='img/error.png')}}" alt="エラーのイメージ" class="error-img">
     </div>
 </div>
 {% endblock %}
