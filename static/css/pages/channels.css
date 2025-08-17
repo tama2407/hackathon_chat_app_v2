@@ -105,7 +105,7 @@
 }
 
 .channels-card p {
-  text-align: center;
+  text-align: left;
   gap: var(--font-size-sm);
 }
 
