@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block nav_btns %}
+<a href="{{ url_for('channels.index') }}" class="azuki-btn">部屋一覧に戻る</a>
+<a href="{{ url_for('auth.login') }}" class="azuki-btn">ログアウトする</a>
+{% endblock %}
+
+{% block title %}404error{% endblock %}
+
+{% block content %}
+<div class="error-wrapper">
+  <div class="error-main-container">
+    <div class="error-column-left">
+      <div class="error-title">
+        <p> 505エラー</p>
+      </div>
+      <div class="error-message">
+        <p>エラーが発生しました...。</p>
+        <p>ご利用の環境では、このページを表示できないようです。</p>
+      </div>
+    </div>
+  </div>
+  <div class="error-img-wrapper">
+    <img src="{{ url_for('static',filename='img/error.png')}}" alt="エラーのイメージ" class="error-img">
+  </div>
+</div>
+{% endblock %}
