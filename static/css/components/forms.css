@@ -10,7 +10,7 @@
   line-height: 32px;
 }
 
-.form-input{
+.form-input {
   min-width: 320px;
   height: 32px;
 }
@@ -19,6 +19,24 @@
   min-width: 320px;
   min-height: 100px;
   height: 32px;
+}
+
+.form-chat-textarea {
+  min-height: 80px;
+  height: 32px;
+}
+
+.form-textarea {
+  min-width: 320px;
+  min-height: 100px;
+  height: 32px;
+}
+
+.form-chat-textarea {
+  width: 100%;
+  min-height: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .form-help-text {
