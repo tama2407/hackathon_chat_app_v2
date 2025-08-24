@@ -64,6 +64,16 @@ def create_app():
     def show_error500(error):
         return render_template('error/500.html'), 500
 
+    # Docker用のヘルスチェックエンドポイント
+    @app.route('/health')
+    def health():
+        try:
+            from database import db_session
+            db_session.execute('SELECT 1')
+            return {"status": "healthy", "database": "connected"}, 200
+        except Exception as e:
+            return {"status": "unhealthy", "error": str(e)}, 503
+
     return app
 
 if __name__ == '__main__':
