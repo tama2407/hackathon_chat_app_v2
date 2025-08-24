@@ -24,7 +24,7 @@ class Config:
         'pool_recycle': 300
     }
     
-    # デバッグ設定（スペルミス修正）
+    # デバッグ設定
     DEBUG = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
 
 class DevelopmentConfig(Config):
