@@ -12,11 +12,10 @@ def init_db(app):
     global engine, db_session
     
     # エンジンの作成
+    # config.pyで指定した辞書（SQLALCHEMY_ENGINE_OPTIONS）を渡す＝環境の変更に対応しやすくする
     engine = create_engine(
         app.config['SQLALCHEMY_DATABASE_URI'],
-        pool_size=10,
-        max_overflow=20,
-        pool_pre_ping=True
+        **app.config['SQLALCHEMY_ENGINE_OPTIONS']
     )
     
     # セッションの設定
