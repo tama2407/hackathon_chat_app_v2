@@ -1,0 +1,20 @@
+# Docker Composeのバージョン
+version: "3.8"
+
+# コンテナの設定内容
+services:
+  mariadb:
+    container_name: mariadb   # コンテナに名前をつける
+    image: mariadb:10.11   # 利用するイメージを指定
+    networks:   # 接続するネットワークを指定
+      - backend
+    volumes:   # 記憶領域のマウントを設定
+      - ./data/mariadb:/var/lib/mysql
+      - ./mariadb/init:/docker-entrypoint-initdb.d:ro
+    environment:   # 環境変数を設定（環境変数は.envファイルで管理）
+      MRIADB_ROOT_PASSWORD: ${MRIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      TZ: ${TZ}
+    restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
