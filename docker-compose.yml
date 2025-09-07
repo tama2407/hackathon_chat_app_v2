@@ -48,6 +48,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro   # nginxの設定ファイルを置く場所へマウント
       - ./ssl:/etc/ssl:ro   # SSL鍵や証明書を置く場所へマウント
       - ./logs/nginx:/var/log/nginx   # ログを永続化（ローカルの./logs/nginxに保存）
+      - ./static:/app/static:ro  # 静的ファイル配信用（Flaskの負荷軽減とパフォーマンス向上）
     ports:   # ポートのマッピングを設定（ブラウザからのアクセス）
       - "80:80"
       - "443:443"
