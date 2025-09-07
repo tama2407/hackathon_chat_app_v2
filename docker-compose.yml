@@ -9,8 +9,8 @@ services:
     networks:   # 接続するネットワークを指定
       - backend
     volumes:   # 記憶領域のマウントを設定
-      - ./data/mariadb:/var/lib/mysql
-      - ./mariadb/init:/docker-entrypoint-initdb.d:ro
+      - ./data/mariadb:/var/lib/mysql   # データの永続化（ローカルの./data/mariadbに保存）
+      - ./mariadb/init:/docker-entrypoint-initdb.d:ro   # 初回起動時に実行される初期化スクリプトを置く場所へマウント
     environment:   # 環境変数を設定（環境変数は.envファイルで管理）
       MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
       MARIADB_DATABASE: ${DB_NAME}
@@ -38,3 +38,18 @@ services:
       - mariadb
     restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
 
+  nginx:
+    container_name: nginx   # コンテナに名前をつける
+    image: nginx:1.28.0-alpine-slim   # 利用するイメージを指定
+    networks:
+      - frontend
+    volumes:   # 記憶領域のマウントを設定
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro   # nginxの設定ファイルを置く場所へマウント
+      - ./ssl:/etc/ssl:ro   # SSL鍵や証明書を置く場所へマウント
+      - ./logs/nginx:/var/log/nginx   # ログを永続化（ローカルの./logs/nginxに保存）
+    ports:   # ポートのマッピングを設定（ブラウザからのアクセス）
+      - "80:80"
+      - "443:443"
+    depends_on:   # 別のサービスに依存することを示す
+      - flask
+    restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
