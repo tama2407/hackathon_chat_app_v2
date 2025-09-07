@@ -20,7 +20,7 @@ services:
       TZ: ${TZ}
     restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
 
-  flask-app:
+  flask:
     build: .   # カレントディレクトリ内のDockerfileからイメージを作成
     # container_name: flask
     networks:   # 接続するネットワークを指定
@@ -36,7 +36,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       TZ: ${TZ}
     depends_on:   # 別のサービスに依存することを示す
-      - mariadb
+      - mariadb   # mariadbコンテナ起動後にflask-appコンテナ起動
     restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
 
   nginx:
@@ -52,7 +52,7 @@ services:
       - "80:80"
       - "443:443"
     depends_on:   # 別のサービスに依存することを示す
-      - flask
+      - flask   # flaskコンテナ起動後にnginxコンテナ起動
     restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
 
 # ネットワークに関する定義
