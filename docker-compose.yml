@@ -1,10 +1,11 @@
 # Docker Composeのバージョン
 version: "3.8"
 
-# コンテナの設定内容
+# コンテナに関する定義
+# コンテナ名の固定は推奨されていないため不要
 services:
   mariadb:
-    container_name: mariadb   # コンテナに名前をつける
+    # container_name: mariadb   # コンテナに名前をつける
     image: mariadb:10.11   # 利用するイメージを指定
     networks:   # 接続するネットワークを指定
       - backend
@@ -21,7 +22,7 @@ services:
 
   flask-app:
     build: .   # カレントディレクトリ内のDockerfileからイメージを作成
-    container_name: flask
+    # container_name: flask
     networks:   # 接続するネットワークを指定
       - frontend
       - backend
@@ -39,7 +40,7 @@ services:
     restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
 
   nginx:
-    container_name: nginx   # コンテナに名前をつける
+    # container_name: nginx   # コンテナに名前をつける
     image: nginx:1.28.0-alpine-slim   # 利用するイメージを指定
     networks:
       - frontend
@@ -53,3 +54,10 @@ services:
     depends_on:   # 別のサービスに依存することを示す
       - flask
     restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
+
+# ネットワークに関する定義
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
