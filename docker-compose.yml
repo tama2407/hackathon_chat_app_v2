@@ -12,9 +12,29 @@ services:
       - ./data/mariadb:/var/lib/mysql
       - ./mariadb/init:/docker-entrypoint-initdb.d:ro
     environment:   # 環境変数を設定（環境変数は.envファイルで管理）
-      MRIADB_ROOT_PASSWORD: ${MRIADB_ROOT_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
       MARIADB_DATABASE: ${DB_NAME}
       MARIADB_USER: ${DB_USER}
       MARIADB_PASSWORD: ${DB_PASSWORD}
       TZ: ${TZ}
     restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
+
+  flask-app:
+    build: .   # カレントディレクトリ内のDockerfileからイメージを作成
+    container_name: flask
+    networks:   # 接続するネットワークを指定
+      - frontend
+      - backend
+    environment:
+      FLASK_ENV: ${FLASK_ENV}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      TZ: ${TZ}
+    depends_on:   # 別のサービスに依存することを示す
+      - mariadb
+    restart: unless-stopped   # コンテナが停止した時の再試行ポリシーを設定（停止していたときは再起動しない・それ以外は再起動する）
+
