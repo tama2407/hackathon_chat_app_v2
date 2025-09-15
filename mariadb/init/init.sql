@@ -71,6 +71,6 @@ CREATE TABLE IF NOT EXISTS `messages` (
 
 -- （５）動作確認用のサンプルデータ
 -- model.pyでbcryptハッシュを前提としているため、パスワードは'test123'をハッシュ化
-INSERT INTO users(name, email, password)VALUES('テスト', 'test1@gmail.com', '2b$12$LQv3c1yqBwEHq.lNGQJpce7nQsWTOGdE.Xc9ORW.zNxNZeKx3KOke');
+INSERT INTO users(name, email, password)VALUES('テスト', 'test1@gmail.com', '$2b$12$LQv3c1yqBwEHq.lNGQJpce7nQsWTOGdE.Xc9ORW.zNxNZeKx3KOke');
 INSERT INTO channels(user_id, name, description)VALUES(1, 'ぼっち部屋', 'テストさんの孤独な部屋です');
 INSERT INTO messages(user_id, channel_id, content)VALUES(1, 1, '誰かかまってください、、、');
